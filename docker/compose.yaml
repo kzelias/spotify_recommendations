@@ -1,0 +1,6 @@
+services:
+  recsys:
+    build: 
+      context: ../
+      dockerfile: docker/Dockerfile
+    network_mode: host

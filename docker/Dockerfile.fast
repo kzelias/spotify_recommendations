@@ -1,0 +1,15 @@
+FROM python:3.10.13-slim
+
+WORKDIR /app
+
+COPY . . 
+
+RUN python3 -m pip install --upgrade pip && python3 -m pip install -U setuptools
+RUN python3 -m pip install gdown 
+RUN gdown 1h61A7VkTSmLLOetCz7GDYl1Tk6bQnTM3 -O binary/index_spotify_d100.bin
+RUN gdown 18Uu6nMIoMTLSEKvVYw-q8KzmNZAqDQyC -O binary/track_to_id.pickle
+RUN gdown 1-abv8pATgrncjemrdGEScX1wk1YodcRh -O binary/id_to_track.pickle
+
+RUN python3 -m pip install --no-cache-dir -r requirements.txt
+
+CMD uvicorn app:app

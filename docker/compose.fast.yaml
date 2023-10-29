@@ -1,0 +1,6 @@
+services:
+  recsys-fast:
+    build: 
+      context: ../
+      dockerfile: docker/Dockerfile.fast
+    network_mode: host
