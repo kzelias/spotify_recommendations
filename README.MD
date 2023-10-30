@@ -3,7 +3,7 @@
 
 ### Быстрый запуск:
 Запустить команду в основной директории репозитория:  
-- `docker compose -f docker/compose.fast.yaml up`
+- `docker compose -f docker/compose.fast.yaml up`  
 (при сборке заранее созданный index и словари ids-uris скачаются с google drive)  
   
 ### Запуск с созданием index вручную:  
