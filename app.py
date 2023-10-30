@@ -43,7 +43,7 @@ def get_recommend(id: str, k: int = 5):
     result = []
     for inx in indices[0][1:]:  # without first
         if inx == -1:
-            # добавляет строку вместо uri, когда 
+            # добавляет строку вместо uri, когда
             result.append("No track to recommend")
         else:
             result.append(ID_TO_TRACK[inx])
