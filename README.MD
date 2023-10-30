@@ -3,20 +3,20 @@
 
 ### Быстрый запуск:
 (при сборке заранее созданный index и словари ids-uris скачаются с google drive)  
+Запустить команду в основной директории репозитория:  
 - `docker compose -f docker/compose.fast.yaml up`
   
   
 ### Запуск с созданием index вручную:  
 ##### Настройка окружения
-- `python -m venv .venv`  
-- `. .venv/bin/activate` 
-- `pip install jupyter` 
-- `ipython kernel install --name ".venv" --user`
+- `python3 -m venv .venv`  
+- `. .venv/bin/activate`  
 - `pip install -r requirements_for_index.txt`  
-##### Создание индекса и сборка
-- открываем `index_creation.ipynb`, выбираем ядро .venv, запускаем все ячейки  
-(данные скачаются с google drive. index сохранится с именем index_spotify_d100.bin, также сохраняются словари ids-uris)
+##### Создание индекса и сборка  
+- `python3 create_index.py` (либо `index_creation.ipynb`)  
+(данные скачаются с google drive. index сохранится с именем index_spotify_d100.bin, также сохраняются словари ids-uris)  
 
+Запустить команду в основной директории репозитория:  
 - `docker compose -f docker/compose.yaml up`  
   
 ### Проверка работоспособности
@@ -28,6 +28,6 @@ http://127.0.0.1:8000/docs#/
 
 ### Примечания:  
 1. Для построения векторных представлений выбран SVD, его конкретная реализация scipy.sparse.svds для разряженных матриц.  
-2. Для построения ann индекса и поиска по нему выбрана библиотека faiss, исходя из последних коммитов, она больше поддерживается и чаще обновляется, чем аналоги в виду annoy, nmslib. По бенчмаркам nmslib быстре faiss, но faiss имеет возможность запускаться на GPU.  
+2. Для построения ann индекса и поиска по нему выбрана библиотека faiss, исходя из последних коммитов, она больше поддерживается и чаще обновляется, чем аналоги в виде annoy, nmslib. По бенчмаркам nmslib быстре faiss, но faiss имеет возможность запускаться на GPU.  
 
 
