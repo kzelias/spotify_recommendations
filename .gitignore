@@ -1,6 +1,7 @@
 # local
 *.csv
 *.bin
+binary/*.pickle
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
