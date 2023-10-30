@@ -10,10 +10,10 @@
 ### Запуск с созданием index вручную:  
 ##### Настройка окружения
 - `python3 -m venv .venv`  
-- `. .venv/bin/activate`  
+- `source .venv/bin/activate`  
 - `pip install -r requirements_for_index.txt`  
 ##### Создание индекса и сборка  
-- `python3 create_index.py` (либо `index_creation.ipynb`)  
+- `python3 create_index.py`, либо через `index_creation.ipynb`  
 (данные скачаются с google drive. index сохранится с именем index_spotify_d100.bin, также сохраняются словари ids-uris)  
 
 Запустить команду в основной директории репозитория:  
